@@ -19,23 +19,21 @@
   under the License.
 -->
 
-<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
-           id="cordova-plugin-whitelist-tests"
-      version="1.3.6-dev">
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0" id="cordova-plugin-whitelist-tests" version="1.3.6-dev">
     <name>Cordova Plugin Whitelist Tests</name>
     <license>Apache 2.0</license>
 
     <js-module src="tests.js" name="tests">
     </js-module>
-    
+
     <js-module src="www/whitelist.js" name="whitelist">
-        <clobbers target="cordova.whitelist" />
+        <clobbers target="cordova.plugins.whitelist" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="WhitelistAPI" >
+            <feature name="WhitelistAPI">
                 <param name="android-package" value="org.apache.cordova.test.WhitelistAPI"/>
             </feature>
         </config-file>
